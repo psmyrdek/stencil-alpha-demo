@@ -23,7 +23,8 @@
     "xregexp": "4.2.4"
   },
   "devDependencies": {
-    "@stencil/core": "1.0.0-alpha.13"
+    "@stencil/core": "1.0.0-alpha.13",
+    "core-js": "3.0.1"
   },
   "license": "MIT"
 }

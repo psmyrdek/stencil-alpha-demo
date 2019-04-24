@@ -1,3 +1,5 @@
+import 'core-js';
+
 import { Component, State, h } from '@stencil/core';
 import { validate } from '../../utils/pattern-validator';
 
