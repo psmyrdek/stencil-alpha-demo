@@ -1,4 +1,4 @@
-System.register(['./p-393d432e.js'], function (exports, module) {
+System.register(['./p-68dc9373.js'], function (exports, module) {
     'use strict';
     var registerInstance, h;
     return {
@@ -5256,8 +5256,8 @@ System.register(['./p-393d432e.js'], function (exports, module) {
             });
             var XRegExp = unwrapExports(lib);
             var validate = function (pattern, input) { return XRegExp(pattern).test(input); };
-            var MyComponent = /** @class */ (function () {
-                function MyComponent(hostRef) {
+            var InvalidComponent = /** @class */ (function () {
+                function InvalidComponent(hostRef) {
                     var _this = this;
                     registerInstance(this, hostRef);
                     this.value = '';
@@ -5268,17 +5268,27 @@ System.register(['./p-393d432e.js'], function (exports, module) {
                         _this.isValid = validate(_this.pattern, _this.value);
                     };
                 }
-                MyComponent.prototype.render = function () {
-                    return (h("div", null, h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
+                InvalidComponent.prototype.render = function () {
+                    return (h("div", { style: { border: '1px solid red', padding: '10px' } }, h("p", null, "Using external dep - cannot be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
                 };
-                Object.defineProperty(MyComponent, "style", {
-                    get: function () { return ""; },
-                    enumerable: true,
-                    configurable: true
-                });
-                return MyComponent;
+                return InvalidComponent;
             }());
-            exports('my_component', MyComponent);
+            exports('invalid_component', InvalidComponent);
+            var ValidComponent = /** @class */ (function () {
+                function ValidComponent(hostRef) {
+                    var _this = this;
+                    registerInstance(this, hostRef);
+                    this.value = '';
+                    this.handleChange = function (event) {
+                        _this.value = event.target.value;
+                    };
+                }
+                ValidComponent.prototype.render = function () {
+                    return (h("div", { style: { border: '1px solid green', padding: '10px' } }, h("p", null, "Not using external dep - can be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value })));
+                };
+                return ValidComponent;
+            }());
+            exports('valid_component', ValidComponent);
         }
     };
 });

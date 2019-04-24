@@ -10,18 +10,22 @@ import { JSX } from '@stencil/core';
 
 
 export namespace Components {
-  interface MyComponent {}
+  interface InvalidComponent {}
+  interface ValidComponent {}
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes {}
+  interface InvalidComponent extends JSXBase.HTMLAttributes {}
+  interface ValidComponent extends JSXBase.HTMLAttributes {}
 
   interface ElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'InvalidComponent': Components.InvalidComponent;
+    'ValidComponent': Components.ValidComponent;
   }
 
   interface IntrinsicElements {
-    'MyComponent': LocalJSX.MyComponent;
+    'InvalidComponent': LocalJSX.InvalidComponent;
+    'ValidComponent': LocalJSX.ValidComponent;
   }
 }
 export { LocalJSX as JSX };
@@ -36,17 +40,25 @@ declare module "@stencil/core" {
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLInvalidComponentElement extends Components.InvalidComponent, HTMLStencilElement {}
+  var HTMLInvalidComponentElement: {
+    prototype: HTMLInvalidComponentElement;
+    new (): HTMLInvalidComponentElement;
+  };
+
+  interface HTMLValidComponentElement extends Components.ValidComponent, HTMLStencilElement {}
+  var HTMLValidComponentElement: {
+    prototype: HTMLValidComponentElement;
+    new (): HTMLValidComponentElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'invalid-component': HTMLInvalidComponentElement
+    'valid-component': HTMLValidComponentElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'invalid-component': HTMLInvalidComponentElement;
+    'valid-component': HTMLValidComponentElement;
   }
 }
 

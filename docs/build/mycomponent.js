@@ -129,4 +129,4 @@ for (var x = allScripts.length - 1; x >= 0; x--) {
 var resourcesUrl = scriptElm ? scriptElm.getAttribute('data-resources-url') || scriptElm.src : '';
 
 // Load resource
-System.import(new URL('./p-374a299c.system.js', resourcesUrl).pathname);
+System.import(new URL('./p-664b304a.system.js', resourcesUrl).pathname);
