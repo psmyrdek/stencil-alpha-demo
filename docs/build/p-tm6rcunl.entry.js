@@ -534,15 +534,6 @@ if (FORCED) {
 // https://tc39.github.io/ecma262/#sec-get-regexp-@@species
 setSpecies('RegExp');
 
-// `RegExp.prototype.flags` getter
-// https://tc39.github.io/ecma262/#sec-get-regexp.prototype.flags
-if (descriptors && /./g.flags != 'g') {
-  objectDefineProperty.f(RegExp.prototype, 'flags', {
-    configurable: true,
-    get: regexpFlags
-  });
-}
-
 var TO_STRING = 'toString';
 var nativeToString = /./[TO_STRING];
 
@@ -724,6 +715,15 @@ var _export = function (options, source) {
 _export({ target: 'RegExp', proto: true, forced: /./.exec !== regexpExec }, {
   exec: regexpExec
 });
+
+// `RegExp.prototype.flags` getter
+// https://tc39.github.io/ecma262/#sec-get-regexp.prototype.flags
+if (descriptors && /./g.flags != 'g') {
+  objectDefineProperty.f(RegExp.prototype, 'flags', {
+    configurable: true,
+    get: regexpFlags
+  });
+}
 
 // CONVERT_TO_STRING: true  -> String#at
 // CONVERT_TO_STRING: false -> String#codePointAt
@@ -1202,10 +1202,6 @@ fixRegexpWellKnownSymbolLogic(
   },
   !SUPPORTS_Y
 );
-
-var MATCH$2 = wellKnownSymbol('match');
-
-var REPLACE = wellKnownSymbol('replace');
 
 var interopRequireDefault = createCommonjsModule(function (module) {
 function _interopRequireDefault(obj) {
