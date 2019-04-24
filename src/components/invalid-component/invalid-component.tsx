@@ -1,4 +1,8 @@
 import 'core-js/features/regexp/constructor';
+import 'core-js/features/regexp/flags';
+import 'core-js/features/regexp/index';
+import 'core-js/features/regexp/match';
+import 'core-js/features/regexp/replace';
 
 import { Component, State, h } from '@stencil/core';
 import { validate } from '../../utils/pattern-validator';
