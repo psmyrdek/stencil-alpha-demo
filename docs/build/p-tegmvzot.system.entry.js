@@ -5469,7 +5469,7 @@ System.register(['./p-68dc9373.js'], function (exports, module) {
                     registerInstance(this, hostRef);
                     this.value = '';
                     this.isValid = true;
-                    this.pattern = "^[/\\p{L}\\p{N}\\p{Z}\\s\u0085\\p{Pd}\\p{Pi}\\p{Pf}\\p{Pc}\\p{Po}\\p{Sc}\\(\\)\\[\\]\"+']*$";
+                    this.pattern = "^[/\\p{L}\\p{N}\\p{Z}\\s\u0085\\p{Pd}\\p{Pi}\\p{Pf}\\p{Pc}\\p{Po}\\p{Pe}\\p{Ps}\\p{Sm}\\p{Sc}\\p{So}\\(\\)\\[\\]\"+']*$";
                     this.handleChange = function (event) {
                         _this.value = event.target.value;
                         _this.isValid = validate(_this.pattern, _this.value);

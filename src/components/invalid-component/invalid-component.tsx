@@ -11,7 +11,7 @@ export class InvalidComponent {
   @State() value = '';
   @State() isValid = true;
 
-  private readonly pattern = "^[/\\p{L}\\p{N}\\p{Z}\\s\u0085\\p{Pd}\\p{Pi}\\p{Pf}\\p{Pc}\\p{Po}\\p{Sc}\\(\\)\\[\\]\"+']*$";
+  private readonly pattern = "^[/\\p{L}\\p{N}\\p{Z}\\s\u0085\\p{Pd}\\p{Pi}\\p{Pf}\\p{Pc}\\p{Po}\\p{Pe}\\p{Ps}\\p{Sm}\\p{Sc}\\p{So}\\(\\)\\[\\]\"+']*$";
 
   handleChange = (event) => {
     this.value = event.target.value;

@@ -5866,7 +5866,7 @@ class InvalidComponent {
         registerInstance(this, hostRef);
         this.value = '';
         this.isValid = true;
-        this.pattern = "^[/\\p{L}\\p{N}\\p{Z}\\s\u0085\\p{Pd}\\p{Pi}\\p{Pf}\\p{Pc}\\p{Po}\\p{Sc}\\(\\)\\[\\]\"+']*$";
+        this.pattern = "^[/\\p{L}\\p{N}\\p{Z}\\s\u0085\\p{Pd}\\p{Pi}\\p{Pf}\\p{Pc}\\p{Po}\\p{Pe}\\p{Ps}\\p{Sm}\\p{Sc}\\p{So}\\(\\)\\[\\]\"+']*$";
         this.handleChange = (event) => {
             this.value = event.target.value;
             this.isValid = validate(this.pattern, this.value);
