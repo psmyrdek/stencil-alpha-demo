@@ -1,1 +1,1 @@
-import{a as e,b as o}from"./mycomponent-5a73e333.js";e().then(e=>{o(null,{resourcesUrl:e})});
+import{a as e,b as o}from"./mycomponent-95c6ae8f.js";e().then(e=>{o(null,{resourcesUrl:e})});

@@ -1,4 +1,4 @@
-import { c as registerInstance, d as h } from './mycomponent-5a73e333.js';
+import { c as registerInstance, d as h } from './mycomponent-95c6ae8f.js';
 
 function unwrapExports (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -5767,7 +5767,7 @@ const XRegExp = unwrapExports(lib);
 
 const validate = (pattern, input) => XRegExp(pattern).test(input);
 
-class InvalidComponent {
+class MyComponent {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.value = '';
@@ -5779,21 +5779,9 @@ class InvalidComponent {
         };
     }
     render() {
-        return (h("div", { style: { border: '1px solid red', padding: '10px' } }, h("p", null, "Using external dep - cannot be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
+        return (h("div", null, h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
     }
+    static get style() { return ""; }
 }
 
-class ValidComponent {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.value = '';
-        this.handleChange = (event) => {
-            this.value = event.target.value;
-        };
-    }
-    render() {
-        return (h("div", { style: { border: '1px solid green', padding: '10px' } }, h("p", null, "Not using external dep - can be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value })));
-    }
-}
-
-export { InvalidComponent as invalid_component, ValidComponent as valid_component };
+export { MyComponent as my_component };
