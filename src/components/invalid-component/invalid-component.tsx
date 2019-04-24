@@ -1,4 +1,4 @@
-import 'core-js/features/regexp';
+import 'core-js/features/regexp/constructor';
 
 import { Component, State, h } from '@stencil/core';
 import { validate } from '../../utils/pattern-validator';
