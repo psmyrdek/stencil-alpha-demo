@@ -11,21 +11,17 @@ import { JSX } from '@stencil/core';
 
 export namespace Components {
   interface InvalidComponent {}
-  interface ValidComponent {}
 }
 
 declare namespace LocalJSX {
   interface InvalidComponent extends JSXBase.HTMLAttributes {}
-  interface ValidComponent extends JSXBase.HTMLAttributes {}
 
   interface ElementInterfaces {
     'InvalidComponent': Components.InvalidComponent;
-    'ValidComponent': Components.ValidComponent;
   }
 
   interface IntrinsicElements {
     'InvalidComponent': LocalJSX.InvalidComponent;
-    'ValidComponent': LocalJSX.ValidComponent;
   }
 }
 export { LocalJSX as JSX };
@@ -45,20 +41,12 @@ declare global {
     prototype: HTMLInvalidComponentElement;
     new (): HTMLInvalidComponentElement;
   };
-
-  interface HTMLValidComponentElement extends Components.ValidComponent, HTMLStencilElement {}
-  var HTMLValidComponentElement: {
-    prototype: HTMLValidComponentElement;
-    new (): HTMLValidComponentElement;
-  };
   interface HTMLElementTagNameMap {
     'invalid-component': HTMLInvalidComponentElement
-    'valid-component': HTMLValidComponentElement
   }
 
   interface ElementTagNameMap {
     'invalid-component': HTMLInvalidComponentElement;
-    'valid-component': HTMLValidComponentElement;
   }
 }
 

@@ -5779,21 +5779,8 @@ class InvalidComponent {
         };
     }
     render() {
-        return (h("div", { style: { border: '1px solid red', padding: '10px' } }, h("p", null, "Using external dep - cannot be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
+        return (h("div", { style: { border: '1px solid gray', padding: '10px' } }, h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
     }
 }
 
-class ValidComponent {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.value = '';
-        this.handleChange = (event) => {
-            this.value = event.target.value;
-        };
-    }
-    render() {
-        return (h("div", { style: { border: '1px solid green', padding: '10px' } }, h("p", null, "Not using external dep - can be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value })));
-    }
-}
-
-export { InvalidComponent as invalid_component, ValidComponent as valid_component };
+export { InvalidComponent as invalid_component };

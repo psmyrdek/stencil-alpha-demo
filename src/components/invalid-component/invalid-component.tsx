@@ -18,8 +18,7 @@ export class InvalidComponent {
 
   render() {
     return (
-      <div style={ { border: '1px solid red', padding: '10px' } }>
-        <p>Using external dep - cannot be rendered in IE11</p>
+      <div style={ { border: '1px solid gray', padding: '10px' } }>
         <input type="text" onInput={this.handleChange} value={this.value} />
         <p>Valid: {this.isValid.toString()}</p>
       </div>

@@ -5269,26 +5269,11 @@ System.register(['./p-68dc9373.js'], function (exports, module) {
                     };
                 }
                 InvalidComponent.prototype.render = function () {
-                    return (h("div", { style: { border: '1px solid red', padding: '10px' } }, h("p", null, "Using external dep - cannot be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
+                    return (h("div", { style: { border: '1px solid gray', padding: '10px' } }, h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
                 };
                 return InvalidComponent;
             }());
             exports('invalid_component', InvalidComponent);
-            var ValidComponent = /** @class */ (function () {
-                function ValidComponent(hostRef) {
-                    var _this = this;
-                    registerInstance(this, hostRef);
-                    this.value = '';
-                    this.handleChange = function (event) {
-                        _this.value = event.target.value;
-                    };
-                }
-                ValidComponent.prototype.render = function () {
-                    return (h("div", { style: { border: '1px solid green', padding: '10px' } }, h("p", null, "Not using external dep - can be rendered in IE11"), h("input", { type: "text", onInput: this.handleChange, value: this.value })));
-                };
-                return ValidComponent;
-            }());
-            exports('valid_component', ValidComponent);
         }
     };
 });
