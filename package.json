@@ -1,0 +1,29 @@
+{
+  "name": "stencil-xregexp",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs.js",
+  "es2017": "dist/esm/index.mjs.js",
+  "jsnext:main": "dist/esm/index.mjs.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/ionic.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {
+    "xregexp": "4.2.4"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.0.0-alpha.13"
+  },
+  "license": "MIT"
+}
