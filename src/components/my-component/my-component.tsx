@@ -22,7 +22,7 @@ export class MyComponent {
     return (
       <div>
         <input type="text" onInput={this.handleChange} value={this.value} />
-        <p>Is valid: {this.isValid.toString()}</p>
+        <p>Valid: {this.isValid.toString()}</p>
       </div>
     )
   }

@@ -5779,7 +5779,7 @@ class MyComponent {
         };
     }
     render() {
-        return (h("div", null, h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Is valid: ", this.isValid.toString())));
+        return (h("div", null, h("input", { type: "text", onInput: this.handleChange, value: this.value }), h("p", null, "Valid: ", this.isValid.toString())));
     }
     static get style() { return ""; }
 }
