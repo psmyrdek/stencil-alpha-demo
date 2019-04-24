@@ -2,11 +2,9 @@ import { Component, State, h } from '@stencil/core';
 import { validate } from '../../utils/pattern-validator';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
-  shadow: true
+  tag: 'invalid-component'
 })
-export class MyComponent {
+export class InvalidComponent {
 
   @State() value = '';
   @State() isValid = true;
@@ -20,7 +18,8 @@ export class MyComponent {
 
   render() {
     return (
-      <div>
+      <div style={ { border: '1px solid red', padding: '10px' } }>
+        <p>Using external dep - cannot be rendered in IE11</p>
         <input type="text" onInput={this.handleChange} value={this.value} />
         <p>Valid: {this.isValid.toString()}</p>
       </div>
